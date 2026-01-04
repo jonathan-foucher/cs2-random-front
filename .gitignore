@@ -1,0 +1,8 @@
+# vuejs
+node_modules/
+dist/
+npm-debug.log
+
+# intellij
+/.idea/
+**.iml
