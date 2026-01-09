@@ -1,5 +1,14 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import PlayerCard from '@/components/PlayerCard.vue'
+
+const players = ref()
+
+const startRandomize = () => {
+  for (const player of players.value) {
+    player.startRandomize()
+  }
+}
 </script>
 
 <template>
@@ -7,10 +16,12 @@ import PlayerCard from '@/components/PlayerCard.vue'
     <q-page-container>
       <q-page class="column main-page">
         <div class="row justify-around">
-          <q-btn color="amber-10" size="lg" icon-right="refresh" class="q-ma-xl">Launch</q-btn>
+          <q-btn color="amber-10" size="lg" icon-right="refresh" class="q-ma-xl" @click="startRandomize">
+            Launch
+          </q-btn>
         </div>
         <div class="row justify-around items-center">
-          <PlayerCard v-for="index in 5" :key="index" :player-name="`Player ${index}`" />
+          <PlayerCard v-for="index in 5" :key="index" ref="players" :player-name="`Player ${index}`" />
         </div>
       </q-page>
     </q-page-container>

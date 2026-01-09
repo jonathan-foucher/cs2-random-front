@@ -1,10 +1,23 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import WeaponRandom from '@/components/WeaponRandom.vue'
 import { useWeapons } from '@/composables/weapons'
 
 defineProps<{ playerName: string }>()
 
 const { getPistolGroups, getMainWeaponGroups } = useWeapons()
+
+const pistolRandom = ref()
+const mainWeaponRandom = ref()
+
+const startRandomize = () => {
+  pistolRandom.value.startRandomize()
+  mainWeaponRandom.value.startRandomize()
+}
+
+defineExpose({
+  startRandomize,
+})
 </script>
 
 <template>
@@ -14,11 +27,11 @@ const { getPistolGroups, getMainWeaponGroups } = useWeapons()
     </q-card-section>
 
     <q-card-section class="weapon-section q-py-sm">
-      <WeaponRandom :weapon-groups="getPistolGroups()" />
+      <WeaponRandom ref="pistolRandom" :weapon-groups="getPistolGroups()" />
     </q-card-section>
 
     <q-card-section class="weapon-section q-pt-sm">
-      <WeaponRandom :weapon-groups="getMainWeaponGroups()" />
+      <WeaponRandom ref="mainWeaponRandom" :weapon-groups="getMainWeaponGroups()" />
     </q-card-section>
   </q-card>
 </template>
