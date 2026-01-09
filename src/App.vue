@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import PlayerCard from '@/components/PlayerCard.vue'
 </script>
 
 <template>
-  <HelloWorld msg="Vite + Vue" />
+  <PlayerCard player-name="Player 1" />
 </template>

@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import App from './App.vue'
+import App from '@/App.vue'
 
 // quasar
 import { Quasar, Notify } from 'quasar'
