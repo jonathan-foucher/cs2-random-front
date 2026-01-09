@@ -11,7 +11,7 @@ const { getWeaponImagePath } = useWeapons()
 <template>
   <q-carousel
     v-model="slideNumber"
-    class="weapon-carousel"
+    class="weapon-carousel rounded-borders"
     animated
     infinite
     transition-next="slide-down"

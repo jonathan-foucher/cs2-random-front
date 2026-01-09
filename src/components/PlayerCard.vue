@@ -26,7 +26,7 @@ const { getPistolGroups, getMainWeaponGroups } = useWeapons()
 <style scoped>
 .player-card {
   width: 100%;
-  max-width: 300px;
+  max-width: 18%;
   height: 100%;
   max-height: 800px;
 }
